@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import './App.css';
 import {Todolist} from './Todolist';
 
+export type FilterType = 'All' | 'Active' | 'Completed'
+
+
 function App() {
 
 
@@ -30,7 +33,7 @@ function App() {
         setTask1(tasks1.filter((el)=> el.id !== taskID))
     }
 
-    const filterTask = (filterVal: string) => {
+    const filterTask = (filterVal: FilterType) => {
     setFilterValue(filterVal)
     }
 

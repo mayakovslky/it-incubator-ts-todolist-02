@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {FilterType} from "./App";
 
 type TaskType = {
     id: number
@@ -9,11 +10,28 @@ type TaskType = {
 type PropsType = {
     title: string
     tasks: Array<TaskType>
-    removeTask:(taskID:number)=>void
-    filterTask:(filterValue: string)=>void
+    removeTask:(taskID:number)=> void
+    filterTask:(filterValue: FilterType)=> void
 }
 
 export function Todolist(props: PropsType) {
+
+    // const [filterValue, setFilterValue] = useState('All')
+    //
+    // let filteredTasks = tasks1
+    //
+    // if (filterValue === 'Active') {
+    //     filteredTasks = tasks1.filter(el => !el.isDone)
+    // }
+    //
+    // if (filterValue === 'Completed') {
+    //     filteredTasks = tasks1.filter(el => el.isDone)
+    // }
+    //
+    // const removeTask = (taskID: number) => {
+    //     setTask1(tasks1.filter((el)=> el.id !== taskID))
+    // }
+
     return <div>
         <h3>{props.title}</h3>
         <div>
